@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>I'm Sorry</title>
+  <meta name="description" content="An apology, for real this time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ SECTION 0 — HERO ═══ -->
+  <div class="section active" id="section-0">
+    <div class="section-inner">
+      <span class="tag">— honest words</span>
+      <h1>I handled things wrong.</h1>
+      <p class="subtext">
+        I didn't understand you properly.<br>
+        I'm trying to now.
+      </p>
+      <button class="btn" onclick="nextSection()">tap to continue →</button>
+    </div>
+    <span class="section-marker">01</span>
+  </div>
+
+  <!-- ═══ SECTION 1 — MISTAKE ═══ -->
+  <div class="section" id="section-1">
+    <div class="section-inner">
+      <span class="tag">— what I did</span>
+      <p class="reveal-line">I let my ego speak first.</p>
+      <p class="reveal-line">I made you feel unheard.</p>
+      <p class="reveal-line">I took something light<br>and made it heavy.</p>
+      <button class="btn next-btn" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">02</span>
+  </div>
+
+  <!-- ═══ SECTION 2 — INSECURITY ═══ -->
+  <div class="section" id="section-2">
+    <div class="section-inner">
+      <span class="tag">— the truth</span>
+      <p class="reveal-line">Sometimes my insecurities take over.</p>
+      <p class="reveal-line">Instead of being honest,<br>I hide behind excuses.</p>
+      <p class="reveal-line">That's not fair to you.</p>
+      <button class="btn btn--teal next-btn" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">03</span>
+  </div>
+
+  <!-- ═══ SECTION 3 — REGRETS ═══ -->
+  <div class="section" id="section-3">
+    <div class="section-inner">
+      <span class="tag">— things I regret</span>
+      <ul class="regret-list">
+        <li>The LinkedIn situation</li>
+        <li>Making you upset</li>
+        <li>Taking your joke seriously</li>
+        <li>Letting my thoughts hurt you</li>
+      </ul>
+      <button class="btn btn--pink next-btn" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">04</span>
+  </div>
+
+  <!-- ═══ SECTION 4 — FLOWCHART ═══ -->
+  <div class="section" id="section-4">
+    <div class="section-inner">
+      <span class="tag">— how it started vs now</span>
+      <div class="flowchart" id="flowchart">
+        <div class="flow-node">Stranger</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">Part of my day</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">Part of my routine</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">My whole day</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node flow-node--highlight">And I love it.</div>
+      </div>
+      <button class="btn next-btn" style="margin-top:24px" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">05</span>
+  </div>
+
+  <!-- ═══ SECTION 5 — COMPLIMENTS ═══ -->
+  <div class="section" id="section-5">
+    <div class="section-inner">
+      <span class="tag">— about you</span>
+      <div class="compliments-scroll">
+        <p class="accent">Your eyes?</p>
+        <p>They're actually insane.</p>
+        <p>Like a galaxy—<br>I could look at them<br>and still not get bored.</p>
+        <p class="accent">That hairstyle you do,<br>with that side strand falling?</p>
+        <p>Yeah… that's OP.</p>
+        <p class="teal">And honestly?</p>
+        <p>Everything about you just works.</p>
+        <p>Your personality,<br>the way you forgive,<br>your nose,<br>your eyes,<br>your eyebrows,<br>your jawline—</p>
+        <p class="accent">it all just fits.</p>
+        <p>You're too good for me sometimes.</p>
+        <p>Like girl,<br>you're so cute<br>I might even fall for your shadow.</p>
+        <p class="teal">And those roti video calls we do?</p>
+        <p>I love those.</p>
+        <p>I'll follow your three rules.</p>
+        <p>And one day,<br>we're going out to buy cheez too—</p>
+        <p class="accent">Inshallah.</p>
+      </div>
+      <p class="scroll-hint">↕ scroll to read</p>
+      <button class="btn next-btn visible" style="margin-top:16px" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">06</span>
+  </div>
+
+  <!-- ═══ SECTION 6 — LEARNING ═══ -->
+  <div class="section" id="section-6">
+    <div class="section-inner">
+      <p class="reveal-line" style="font-size:20px">I'll watch that show.</p>
+      <p class="reveal-line" style="font-size:20px">And I'll learn from it.</p>
+      <div class="divider" style="margin:20px auto"></div>
+      <p class="reveal-line accent" style="font-size:24px;font-weight:700;color:var(--accent)">Baddie &lt;3</p>
+      <button class="btn btn--teal next-btn" onclick="nextSection()">→</button>
+    </div>
+    <span class="section-marker">07</span>
+  </div>
+
+  <!-- ═══ SECTION 7 — YES / NO ═══ -->
+  <div class="section" id="section-7">
+    <div class="section-inner" id="yesno-inner">
+      <div id="yesno-question">
+        <span class="tag">— one question</span>
+        <h2>Filza, will you listen to music with me?</h2>
+        <div class="yesno-wrap" id="yesno-wrap">
+          <button class="btn" id="btn-yes" onclick="handleYes()">YES</button>
+          <button class="btn btn--outline btn-no" id="btn-no">NO</button>
+        </div>
+      </div>
+      <div class="yes-message" id="yes-message">
+        <p style="font-size:20px;font-weight:700;margin-bottom:12px">Thanks, baddie.</p>
+        <p style="font-size:16px;color:#666">Now here's something I made for you.</p>
+        <button class="btn" style="margin-top:24px" onclick="nextSection()">let's go →</button>
+      </div>
+    </div>
+    <span class="section-marker">08</span>
+  </div>
+
+  <!-- ═══ SECTION 8 — GAME ═══ -->
+  <div class="section" id="section-8">
+    <div class="section-inner" id="game-root"></div>
+    <span class="section-marker">09</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="app.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

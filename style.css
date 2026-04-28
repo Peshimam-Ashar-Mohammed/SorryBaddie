@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --bg: #F4E8D2;
+  --accent: #FF6A00;
+  --teal: #12836A;
+  --pink: #FFB6C1;
+  --warm-white: #FFF6E8;
+  --black: #1a1a1a;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── SECTIONS ── */
+.section {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  z-index: 1;
+}
+
+.section.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  z-index: 10;
+}
+
+.section-inner {
+  max-width: 380px;
+  width: 100%;
+}
+
+/* ── TYPOGRAPHY ── */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.subtext {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 32px;
+}
+
+/* ── BRUTALIST BUTTONS ── */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--black);
+}
+
+.btn--teal {
+  background: var(--teal);
+}
+
+.btn--pink {
+  background: var(--pink);
+  color: var(--black);
+}
+
+.btn--small {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--black);
+}
+
+.next-btn {
+  margin-top: 36px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.next-btn.visible {
+  opacity: 1;
+}
+
+/* ── HERO (Section 0) ── */
+#section-0 .section-inner {
+  text-align: left;
+}
+
+#section-0 h1 {
+  font-size: 32px;
+  border-bottom: 4px solid var(--accent);
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+#section-0 .btn {
+  margin-top: 8px;
+}
+
+/* ── REVEAL LINES ── */
+.reveal-line {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-line.shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── REGRETS LIST (Section 3) ── */
+.regret-list {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.regret-list li {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-left: 4px solid var(--accent);
+  background: var(--warm-white);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.regret-list li.shown {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── FLOWCHART (Section 4) ── */
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-node {
+  padding: 12px 24px;
+  border: 3px solid var(--black);
+  background: var(--warm-white);
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 200px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flow-node.shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flow-node--highlight {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--black);
+  font-size: 18px;
+}
+
+.flow-arrow {
+  font-size: 22px;
+  color: var(--teal);
+  padding: 6px 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.flow-arrow.shown {
+  opacity: 1;
+}
+
+/* ── COMPLIMENTS (Section 5) ── */
+.compliments-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+  text-align: left;
+  padding: 20px;
+  border: 3px solid var(--black);
+  background: var(--warm-white);
+  box-shadow: 4px 4px 0 var(--black);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--warm-white);
+}
+
+.compliments-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.compliments-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+.compliments-scroll p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.compliments-scroll p.accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.compliments-scroll p.teal {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.scroll-hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ── LEARNING (Section 6) ── */
+#section-6 .section-inner {
+  text-align: center;
+}
+
+#section-6 .reveal-line {
+  font-size: 20px;
+}
+
+/* ── YES/NO (Section 7) ── */
+#section-7 .section-inner {
+  text-align: center;
+  position: relative;
+  min-height: 300px;
+}
+
+.yesno-wrap {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 28px;
+  position: relative;
+  min-height: 120px;
+}
+
+.btn-no {
+  position: relative;
+  transition: left 0.3s ease, top 0.3s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  z-index: 2;
+}
+
+.yes-message {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.yes-message.visible {
+  opacity: 1;
+}
+
+/* ── GAME (Section 8) ── */
+#section-8 {
+  padding: 0;
+}
+
+#section-8 .section-inner {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 4px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.game-hud .combo {
+  color: var(--accent);
+  font-size: 13px;
+  animation: pulse 0.5s ease infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.game-canvas {
+  border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  background: var(--warm-white);
+  display: block;
+  touch-action: none;
+}
+
+.game-over {
+  text-align: center;
+  padding: 24px;
+}
+
+.game-over h2 {
+  font-size: 36px;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+
+.game-over p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.game-over p.delulu {
+  margin-top: 20px;
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 15px;
+  border: 2px solid var(--teal);
+  padding: 12px;
+  background: var(--warm-white);
+}
+
+.game-over .btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.game-start {
+  text-align: center;
+}
+
+.game-start h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.game-start p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* ── DECORATIVE ── */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.divider {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  margin: 20px 0;
+}
+
+/* section markers */
+.section-marker {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 480px) {
+  h1 { font-size: 36px; }
+  .reveal-line { font-size: 20px; }
+}
